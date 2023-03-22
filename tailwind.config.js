@@ -14,6 +14,7 @@ module.exports = {
       'st-lt-blue': "#0da2e4",
       'st-white': "#ffffff",
       'st-lt-gray': "#DDDDDD",
+      'st-bg-gray': "#f8f8f8",
     },
   },
   plugins: [],

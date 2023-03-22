@@ -583,6 +583,14 @@ video {
   width: 5rem;
 }
 
+.w-1\/2 {
+  width: 50%;
+}
+
+.w-1\/3 {
+  width: 33.333333%;
+}
+
 .max-w-6xl {
   max-width: 72rem;
 }
@@ -652,9 +660,18 @@ video {
   background-color: rgb(45 85 145 / var(--tw-bg-opacity));
 }
 
+.bg-st-bg-gray {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 248 248 / var(--tw-bg-opacity));
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .px-4 {
@@ -685,6 +702,11 @@ video {
 .py-2\.5 {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .pb-4 {

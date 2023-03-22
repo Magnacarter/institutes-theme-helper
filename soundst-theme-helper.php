@@ -134,5 +134,6 @@ class Init_Plugin {
 	public function init_autoloader() {
 		require_once 'classes/class-hero.php';
 		require_once 'classes/class-create-institute-sections.php';
+		require_once 'classes/class-footer-sections.php';
 	}
 }
