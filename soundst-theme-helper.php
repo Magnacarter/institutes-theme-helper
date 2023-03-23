@@ -45,7 +45,13 @@ class Init_Plugin {
 		register_activation_hook( __FILE__, array( __CLASS__, 'activate_plugin' ) );
 		register_deactivation_hook( __FILE__, array( __CLASS__, 'deactivate_plugin' ) );
 		register_uninstall_hook( __FILE__, array( __CLASS__, 'uninstall_plugin' ) );
-
+		?>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" 
+			integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" 
+			crossorigin="anonymous"/>
+		<?php
 		require_once 'classes/class-custom-post-types.php';
 
         // Load plugin scripts and styles.

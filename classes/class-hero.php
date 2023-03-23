@@ -63,6 +63,7 @@ class Hero {
                 <div class="max-w-6xl mx-auto px-4">
                     <div class="md:w-6/12 w-full">
                         <h1><?php echo esc_html( $title ); ?></h1>
+                        <div class="blue-bottom-borrder border-solid border-b-4 border-st-lt-blue w-24 mb-3"></div>
                         <div class=w-20 border-b-4 border-sky-500"></div>
                         <p class="font-medium text-lg"><?php echo esc_html( $excerpt ); ?></p>
                         <div class="w-full pt-4">
