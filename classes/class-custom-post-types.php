@@ -16,7 +16,7 @@ class Create_Custom_Post_Type {
   public function __construct( $args = [], $pt_name ) {
     $this->set_args( $args );
     $this->set_pt_name( $pt_name );
-    add_action( 'init', array( $this, 'create_post_type' ) );
+    add_action( 'init', [$this, 'create_post_type'] );
   }
 
   public function set_args( $args ) {

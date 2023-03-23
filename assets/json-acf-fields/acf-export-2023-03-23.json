@@ -1,9 +1,4 @@
-		<link
-			rel="stylesheet"
-			href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" 
-			integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" 
-			crossorigin="anonymous"/>
-		[
+[
     {
         "key": "group_63c1b060bd638",
         "title": "Institute Fields",
@@ -190,12 +185,12 @@
                 "endpoint": 0
             },
             {
-                "key": "field_63c1b1fd399f8",
-                "label": "Centers",
-                "name": "centers",
+                "key": "field_641c9e7063ece",
+                "label": "Center Posts",
+                "name": "center_posts",
                 "aria-label": "",
                 "type": "relationship",
-                "instructions": "Choose the centers for this institute.",
+                "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {

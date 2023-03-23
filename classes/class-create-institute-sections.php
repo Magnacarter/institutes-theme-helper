@@ -117,7 +117,7 @@ class Create_Institute_Sections {
     /**
      * Set post id.
      * 
-     * @return void
+     * @return int
      */
     public function set_id() {
         global $post;
