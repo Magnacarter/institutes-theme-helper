@@ -26,6 +26,7 @@ class Create_Institute_Sections {
         $this->set_acfs();
         add_action( 'render_welcome_section', [$this, 'build_welcome_section'] );
         add_action( 'render_centers_section', [$this, 'build_centers_section'] );
+        add_action( 'render_conditions_section', [$this, 'build_conditions_section'] );
     }
 
     /**
@@ -48,12 +49,34 @@ class Create_Institute_Sections {
                     <?php echo $content; ?>
                     <div class="flex justify-between flex-wrap pt-8">
                         <a href="#centers"
-                            class="uppercase font-bold text-st-white bg-st-dk-blue hover:bg-st-lt-blue focus:ring-4 focus:outline-none font-medium text-sm px-5 py-2 text-center inline-flex items-center">
+                            class="
+                                uppercase 
+                                font-bold 
+                                text-st-white 
+                                bg-st-dk-blue hover:bg-st-lt-blue focus:ring-4 focus:outline-none 
+                                font-medium 
+                                text-sm 
+                                px-5 
+                                py-2 
+                                text-center
+                                inline-flex
+                                items-center">
                             Our Centers
                             <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                         </a>
                         <a href="#consult-form"
-                            class="uppercase font-bold text-st-white bg-st-lt-blue hover:bg-st-dk-blue focus:ring-4 focus:outline-none font-medium text-sm px-5 py-2 text-center inline-flex items-center">
+                            class="
+                                uppercase
+                                font-bold 
+                                text-st-white 
+                                bg-st-lt-blue hover:bg-st-dk-blue focus:ring-4 focus:outline-none 
+                                font-medium 
+                                text-sm 
+                                px-5 
+                                py-2 
+                                text-center 
+                                inline-flex 
+                                items-center">
                             Request a Consultation
                             <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                         </a>
@@ -67,38 +90,36 @@ class Create_Institute_Sections {
      * Build the centers section.
      */
     public function build_centers_section() {
-        $args = [
-            'post_type' => 'center',
-            'posts_per_page' => -1,
-        ];
-        $centers = new WP_Query( $args );
+        $cpts = get_field( 'center_posts', $this->id );
+        if ( empty( $cpts ) ) {
+            return;
+        }
         ?>
-            <div id="centers" class="max-w-6xl mx-auto flex justify-between flex-wrap px-4 py-12">
+            <div id="cpts" class="max-w-6xl mx-auto flex justify-between flex-wrap px-4 py-12">
                 <div class="w-full pb-4 border-b border-black border-solid mb-12">
                     <h2>Centers of Excellence</h2>
                 </div>
-                <div class="flex flex-wrap justify-between">
-                    <?php if( $centers->have_posts() ) : ?>
-                        <?php while ( $centers->have_posts() ) : $centers->the_post(); ?>
-                            <?php
-                                $thumb_url = get_the_post_thumbnail_url();
-                            ?>
-                            <div class="md:w-1/6 h-64 w-full pb-12 border-solid border-st-lt-gray border rounded-sm md:my-0 my-4 bg-st-white text-center md:px-0 px-4 transition duration-500 md:hover:scale-125 md:flex md:justify-center md:items-center">
-                                <a
-                                    href="<?php the_permalink(); ?>"
-                                    class="">
-                                    <img
-                                        class="max-h-48 w-full object-cover"
-                                        src="<?php echo esc_url( $thumb_url ); ?>" 
-                                        alt="<?php echo esc_attr( the_title() ); ?>"
-                                    />
-                                    <h5 class="py-4"><?php the_title(); ?></h5>
-                                </a>
-                            </div>
-                        <?php endwhile; ?>
-                    <?php endif; ?>
-                    <?php wp_reset_postdata(); ?>
+                
+                <?php include( SOUNDST_PLUGIN_DIR . '/views/general-loop.php' ); ?>
+            </div>
+        <?php
+    }
+
+    /**
+     * Build the centers section.
+     */
+    public function build_conditions_section() {
+        $cpts = get_field( 'conditions', $this->id );
+        if ( empty( $cpts ) ) {
+            return;
+        }
+        ?>
+            <div id="cpts" class="max-w-6xl mx-auto flex justify-between flex-wrap px-4 py-12">
+                <div class="w-full pb-4 border-b border-black border-solid mb-12">
+                    <h2>Conditions Treated</h2>
                 </div>
+                
+                <?php include( SOUNDST_PLUGIN_DIR . '/views/general-loop.php' ); ?>
             </div>
         <?php
     }

@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $plugin_url = plugin_dir_url( __FILE__ );
 define( 'SOUNDST_PLUGIN_URL', $plugin_url );
-define( 'SOUNDST_PLUGIN_DIR', plugin_dir_path( __DIR__ ) );
+define( 'SOUNDST_PLUGIN_DIR', plugin_dir_path( __DIR__ ) . '/soundst-theme-helper' );
 define( 'SOUNDST_PLUGIN_VER', '1.0.0' );
 
 new Init_Plugin();
