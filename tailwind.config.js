@@ -3,7 +3,7 @@ module.exports = {
   mode: 'jit',
   purge: {
     enabled: true,
-    content: ["./assets/**/*.js", "./classes/*.{html,php}"],
+    content: ["./assets/**/*.js", "./classes/*.{html,php}", "./views/*.{html,php}"],
   },
   theme: {
     extend: {},

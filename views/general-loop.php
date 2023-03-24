@@ -1,24 +1,21 @@
-<div class="flex flex-wrap justify-between">
+<div class="grid md:grid-cols-5 grid-cols-1 gap-4">
     <?php if( $cpts ) : ?>
         <?php foreach( $cpts as $cpt ) : ?>
-            <div
-                class="
-                md:w-1/6 
-                h-64
-                w-full
-                border-solid 
-                border-st-lt-gray 
-                border 
-                rounded-sm 
-                md:my-0 my-4 
-                bg-st-white 
-                text-center 
-                md:px-0 px-4 
-                transition 
-                duration-500 
+            <div class="
+                md:my-0 my-4
+                md:px-0 px-4
                 md:hover:scale-125 
                 md:justify-center 
-                md:items-center">
+                md:items-center
+                h-64
+                border-solid 
+                border-st-lt-gray 
+                border
+                rounded-sm 
+                bg-st-white 
+                text-center 
+                transition 
+                duration-300">
                 <a href="<?php the_permalink( $cpt->ID ); ?>">
                     <img
                         class="h-36 w-full object-cover"
