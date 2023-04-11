@@ -1,10 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: 'jit',
-  purge: {
-    enabled: true,
-    content: ["./assets/**/*.js", "./classes/*.{html,php}", "./views/*.{html,php}"],
-  },
+  content: [
+    "./assets/**/*.js",
+    "./classes/*.{html,php}",
+    "./views/*.{html,php}"
+  ],
+  plugins: [],
   theme: {
     extend: {},
     colors: {
@@ -15,7 +17,7 @@ module.exports = {
       'st-white': "#ffffff",
       'st-lt-gray': "#DDDDDD",
       'st-bg-gray': "#f8f8f8",
+      'st-dk-gray': "#667388",
     },
   },
-  plugins: [],
 }

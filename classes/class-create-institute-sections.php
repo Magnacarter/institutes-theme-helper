@@ -116,7 +116,7 @@ class Create_Institute_Sections {
     }
 
     /**
-     * Build the centers section.
+     * Build the conditions section.
      */
     public function build_conditions_section() {
         $cpts = get_field( 'conditions', $this->id );

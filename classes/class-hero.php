@@ -58,12 +58,14 @@ class Hero {
      * @return void
      */
     public function build_hero() {
-        $url      = $this->acfs[0]['hero_image']['url'];
-        $alt      = $this->acfs[0]['hero_image']['title'];
-        $excerpt  = $this->acfs[0]['hero_excerpt'];
-        $btn_txt  = $this->acfs[0]['button_text'];
-        $btn_link = $this->acfs[0]['button_link'];
-        $title    = get_the_title( $this->id );
+        $url        = $this->acfs[0]['hero_image']['url'];
+        $alt        = $this->acfs[0]['hero_image']['title'];
+        $excerpt    = $this->acfs[0]['hero_excerpt'];
+        $btn_txt    = $this->acfs[0]['button_text'];
+        $btn_link   = $this->acfs[0]['button_link'];
+        $btn_txt_2  = ($this->acfs[0]['button_text_2']) ? $this->acfs[0]['button_text_2'] : '';
+        $btn_link_2 = ($this->acfs[0]['button_link_2']) ? $this->acfs[0]['button_link_2'] : '';
+        $title      = get_the_title( $this->id );
 
         // Add the hero background image.
         $this->hero_image( $url );
@@ -75,11 +77,55 @@ class Hero {
                         <div class="blue-bottom-borrder border-solid border-b-4 border-st-lt-blue w-24 mb-3"></div>
                         <div class=w-20 border-b-4 border-sky-500"></div>
                         <p class="font-medium text-lg"><?php echo esc_html( $excerpt ); ?></p>
-                        <div class="w-full pt-4">
-                            <button type="button" class="content-btn text-st-white bg-[#2d5591] hover:bg-st-lt-blue focus:ring-4 focus:outline-none font-medium text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                <?php echo esc_html( $btn_txt ); ?>
-                            </button>
-                        </div>
+                        <?php if ( get_post_type() != 'institute' ) : ?>
+                            <div class="w-full pt-4">
+                                <a href="<?php echo esc_url( $btn_link ); ?>" class="
+                                    content-btn 
+                                    text-st-white 
+                                    bg-[#2d5591] hover:bg-st-lt-blue focus:ring-4 focus:outline-none 
+                                    font-bold 
+                                    text-sm 
+                                    px-5
+                                    py-2.5
+                                    md:mr-4
+                                    text-center
+                                    uppercase
+                                    inline-flex 
+                                    items-center">
+                                    <?php echo esc_html( $btn_txt ); ?>
+                                </a>
+                                <a href="<?php echo esc_url( $btn_link_2 ); ?>" class="
+                                    content-btn 
+                                    text-st-white 
+                                    bg-st-lt-blue hover:bg-[#2d5591] focus:ring-4 focus:outline-none 
+                                    font-bold 
+                                    text-sm
+                                    px-5 
+                                    py-2.5 
+                                    text-center
+                                    uppercase
+                                    inline-flex 
+                                    items-center">
+                                    <?php echo esc_html( $btn_txt_2 ); ?>
+                                </a>
+                            </div>
+                        <?php else : ?>
+                            <div class="w-full pt-4">
+                                <a href="<?php echo esc_url( $btn_link ); ?>" class="
+                                    content-btn 
+                                    text-st-white 
+                                    hover:bg-[#2d5591] bg-st-lt-blue focus:ring-4 focus:outline-none 
+                                    font-medium 
+                                    text-sm 
+                                    px-5 
+                                    py-2.5 
+                                    text-center 
+                                    inline-flex 
+                                    items-center">
+                                    <?php echo esc_html( $btn_txt ); ?>
+                                </a>
+                            </div>      
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

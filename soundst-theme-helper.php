@@ -82,7 +82,7 @@ class Init_Plugin {
 			wp_enqueue_style(  'soundst_plugin_styles', SOUNDST_PLUGIN_URL . 'dist/output.css', array(), SOUNDST_PLUGIN_VER );
 
 			// Enqueue slick js.
-			wp_enqueue_script( 'soundst_slick_js', SOUNDST_PLUGIN_URL . 'assets/js/slick.min.js', array(), SOUNDST_PLUGIN_VER, true );
+			wp_enqueue_script( 'soundst_flowbite_js', SOUNDST_PLUGIN_URL . 'assets/js/slick.min.js', array(), SOUNDST_PLUGIN_VER, true );
 
 			// Enqueue plugin js.
 			wp_enqueue_script( 'soundst_webcomponent', SOUNDST_PLUGIN_URL . 'assets/js/plugin.js', array(), SOUNDST_PLUGIN_VER, true );
@@ -157,6 +157,9 @@ class Init_Plugin {
 	public function init_autoloader() {
 		require_once 'classes/class-hero.php';
 		require_once 'classes/class-create-institute-sections.php';
+		require_once 'classes/class-centers-sections.php';
+		require_once 'classes/class-conditions-sections.php';
+		require_once 'classes/class-faculty-sections.php';
 		require_once 'classes/class-footer-sections.php';
 	}
 }
